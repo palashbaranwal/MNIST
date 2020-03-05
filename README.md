@@ -45,7 +45,7 @@ The agenda of this project to reach an accuracy of 99.4 % within 15 epochs and 1
    * This model is really nice, overfitting at its least. 
    * To check the effect of dropout at different levels of convolution, refer to [**Step by Step Network Update**](https://docs.google.com/spreadsheets/d/1NUM1eW6RdCb2L5-g2rbJ2UoGToiRC5IRQzwvw-CcVtU)
 
-#### **Code 4 - Include Global Average Pooling **
+#### **Code 4 - Include Global Average Pooling**
 
 1. Include Global Average Pooling
 2. Network <br/><br/>28x28x1 | 3x3x10 | 26x26x10<br/>26x26x10 | 3x3x10 | 24x24x10<br/>24x24x10 | 3x3x10 | 22x22x10<br/>22x22x10 | MP | 11x11x10<br/>11x11x10 | 3x3x10 | 9x9x10<br/>9x9x10 | 3x3x10 | 7x7x10<br/>7x7x10 | 1x1x10 | 7x7x10<br/>7x7x10 | GAP | 1x1x10
@@ -58,7 +58,7 @@ The agenda of this project to reach an accuracy of 99.4 % within 15 epochs and 1
    * Using GAP has decreased the number of parameters to less than 5000, which is a good thing. But our accuracy has dropped. 
    * Since we have reduced model capacity, accuracy reduction is expected. 
    
-#### **Code 5 - Increase Capacity **
+#### **Code 5 - Increase Capacity**
 
 1. Include further capacity
 2. Network <br/><br/>28x28x1 | 3x3x10 | 26x26x10<br/>26x26x10 | 3x3x10 | 24x24x10<br/>24x24x10 | 3x3x10 | 22x22x10<br/>22x22x10 | MP | 11x11x10<br/>11x11x10 | 3x3x10 | 9x9x10<br/>9x9x10 | 3x3x32 | 7x7x32<br/>7x7x32 | 3x3x10 | 5x5x10<br/>5x5x10 | 3x3x10 | 3x3x10<br/>3x3x10 | GAP | 1x1x10
@@ -70,5 +70,35 @@ The agenda of this project to reach an accuracy of 99.4 % within 15 epochs and 1
 4. Analysis:
    * We have achieved our target of 99.4 % accuracy. 
    * As number of parameters is already 9500+, we should not be trying to add a layer after GAP.
-   * For other variations in this step, refer to [**Step by Step Network Update**]
+   * For other variations in this step, refer to [**Step by Step Network Update**](https://docs.google.com/spreadsheets/d/1NUM1eW6RdCb2L5-g2rbJ2UoGToiRC5IRQzwvw-CcVtU)
+   
+#### **Code 6 - Image Augmentation**
+
+1. Include Image Augmentation
+2. Network <br/><br/>28x28x1 | 3x3x10 | 26x26x10<br/>26x26x10 | 3x3x10 | 24x24x10<br/>24x24x10 | 3x3x10 | 22x22x10<br/>22x22x10 | MP | 11x11x10<br/>11x11x10 | 3x3x10 | 9x9x10<br/>9x9x10 | 3x3x32 | 7x7x32<br/>7x7x32 | 3x3x10 | 5x5x10<br/>5x5x10 | 3x3x10 | 3x3x10<br/>3x3x10 | GAP | 1x1x10
+
+3. Results :
+   - Parameters: 9634
+   - Best Training Accuracy : 99.1
+   - Best Test Accuracy: 99.4 
+4. Analysis:
+   * Rotational variance seems to work just fine. 
+   * Rotational Variance and Random Erasing does not seems to work for us.  [Random Erasing](https://arxiv.org/pdf/1708.04896.pdf) - Randomly selects a rectangle region in an image and erases its pixels. 
+   * Random Erasing works quite well, with minimizing overfitting. However, it does not meets our target of 99.4 % accuracy.
+   * For other variations in this step, refer to [**Step by Step Network Update**](https://docs.google.com/spreadsheets/d/1NUM1eW6RdCb2L5-g2rbJ2UoGToiRC5IRQzwvw-CcVtU)
+
+#### **Code 7 - Adding LR Scheduler **
+
+1. Adding LR Scheduler
+2. Network <br/><br/>28x28x1 | 3x3x10 | 26x26x10<br/>26x26x10 | 3x3x10 | 24x24x10<br/>24x24x10 | 3x3x10 | 22x22x10<br/>22x22x10 | MP | 11x11x10<br/>11x11x10 | 3x3x10 | 9x9x10<br/>9x9x10 | 3x3x32 | 7x7x32<br/>7x7x32 | 3x3x10 | 5x5x10<br/>5x5x10 | 3x3x10 | 3x3x10<br/>3x3x10 | GAP | 1x1x10
+
+3. Results :
+   - Parameters: 9634
+   - Best Training Accuracy : 99.1
+   - Best Test Accuracy: 99.41 (12th epoch) 99.42 (13th epoch) 99.42 (14th epoch) 
+4. Analysis:
+   * **We have again achieved 99.4 % accuracy !!!** 
+   * For other variations in this step, refer to [**Step by Step Network Update**](https://docs.google.com/spreadsheets/d/1NUM1eW6RdCb2L5-g2rbJ2UoGToiRC5IRQzwvw-CcVtU)
+
+
    
