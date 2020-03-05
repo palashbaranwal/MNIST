@@ -11,9 +11,8 @@ The agenda of this project to reach an accuracy of 99.4 % within 15 epochs and 1
 4. Set Basic Working Code
 5. Set Basic Training  & Test Loop
 6. Results:
-   - Parameters: 6.3M
-   - Best Training Accuracy: 99.99
-   - Best Test Accuracy: 99.24
+   - Parameters: 10790
+   - Best Training Accuracy: 99.12
+   - Best Test Accuracy: 99.8
 7. Analysis:
-   * Extremely Heavy Model for such a problem
-   * Model is over-fitting, but we are changing our model in the next step
+   * This is good enough model, but we have reach an accuracy of 99.4 % within 15 epochs and 15000 parameters 
