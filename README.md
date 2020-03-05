@@ -87,7 +87,7 @@ The agenda of this project to reach an accuracy of 99.4 % within 15 epochs and 1
    * Random Erasing works quite well, with minimizing overfitting. However, it does not meets our target of 99.4 % accuracy.
    * For other variations in this step, refer to [**Step by Step Network Update**](https://docs.google.com/spreadsheets/d/1NUM1eW6RdCb2L5-g2rbJ2UoGToiRC5IRQzwvw-CcVtU)
 
-#### **Code 7 - Adding LR Scheduler **
+#### **Code 7 - Adding LR Scheduler**
 
 1. Adding LR Scheduler
 2. Network <br/><br/>28x28x1 | 3x3x10 | 26x26x10<br/>26x26x10 | 3x3x10 | 24x24x10<br/>24x24x10 | 3x3x10 | 22x22x10<br/>22x22x10 | MP | 11x11x10<br/>11x11x10 | 3x3x10 | 9x9x10<br/>9x9x10 | 3x3x32 | 7x7x32<br/>7x7x32 | 3x3x10 | 5x5x10<br/>5x5x10 | 3x3x10 | 3x3x10<br/>3x3x10 | GAP | 1x1x10
